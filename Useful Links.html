@@ -90,16 +90,18 @@
   </style>
 </head>
 <body>
+
   <h1>Useful Links</h1>
   <div class="small-text">Scroll down to give feedback</div>
 
   <input type="text" id="search" placeholder="Search links..." />
 
   <div class="category-buttons" id="category-buttons"></div>
-
   <div id="link-section" class="link-section"></div>
 
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeugLtZh5UBrDpb1wazfZskykOzju19LoKwcyhR3kXF_V0YQQ/viewform?embedded=true">Loading…</iframe>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeugLtZh5UBrDpb1wazfZskykOzju19LoKwcyhR3kXF_V0YQQ/viewform?embedded=true">
+    Loading…
+  </iframe>
 
   <script>
     const links = [
@@ -107,80 +109,39 @@
       { name: 'GitHub', url: 'https://www.github.com', category: ['Technology', 'Information'] },
       { name: 'HackerRank', url: 'https://www.hackerrank.com', category: ['Technology'] },
       { name: 'Figma', url: 'https://www.figma.com', category: ['Technology'] },
+      { name: 'Canva', url: 'https://www.canva.com', category: ['Technology', 'Design'] },
+
       { name: 'Stack Overflow', url: 'https://www.stackoverflow.com', category: ['Technology'] },
       { name: 'Code.org', url: 'https://www.code.org', category: ['Technology'] },
       { name: 'Tinkercad', url: 'https://www.tinkercad.com', category: ['Technology'] },
       { name: 'Mozilla Developer Network', url: 'https://developer.mozilla.org', category: ['Technology'] },
+
       { name: 'YouTube', url: 'https://www.youtube.com', category: ['Entertainment'] },
       { name: 'Netflix', url: 'https://www.netflix.com', category: ['Entertainment'] },
+      { name: 'Amazon Prime Video', url: 'https://www.primevideo.com', category: ['Entertainment'] },
       { name: 'Spotify', url: 'https://www.spotify.com', category: ['Entertainment'] },
+
       { name: 'Microsoft Office', url: 'https://www.office.com', category: ['Productivity'] },
       { name: 'Google Workspace', url: 'https://workspace.google.com', category: ['Productivity'] },
       { name: 'Notion', url: 'https://www.notion.so', category: ['Productivity'] },
-      { name: 'Evernote', url: 'https://www.evernote.com', category: ['Productivity'] },
       { name: 'Trello', url: 'https://trello.com', category: ['Productivity'] },
-      { name: 'Asana', url: 'https://asana.com', category: ['Productivity'] },
-      { name: 'Slack', url: 'https://slack.com', category: ['Productivity'] },
-      { name: 'Dropbox', url: 'https://www.dropbox.com', category: ['Productivity'] },
-      { name: 'Google Keep', url: 'https://keep.google.com', category: ['Productivity'] },
-      { name: 'OneNote', url: 'https://www.onenote.com', category: ['Productivity'] },
-      { name: 'Zoho', url: 'https://www.zoho.com', category: ['Productivity'] },
-      { name: 'ClickUp', url: 'https://www.clickup.com', category: ['Productivity'] },
-      { name: 'Todoist', url: 'https://www.todoist.com', category: ['Productivity'] },
-      { name: 'Monday.com', url: 'https://monday.com', category: ['Productivity'] },
-      { name: 'Basecamp', url: 'https://basecamp.com', category: ['Productivity'] },
-      { name: 'Airtable', url: 'https://www.airtable.com', category: ['Productivity'] },
-      { name: 'Clockify', url: 'https://clockify.me', category: ['Productivity'] },
-      { name: 'RescueTime', url: 'https://www.rescuetime.com', category: ['Productivity'] },
-      { name: 'Calendly', url: 'https://calendly.com', category: ['Productivity'] },
-      { name: 'Miro', url: 'https://miro.com', category: ['Productivity'] },
-      { name: 'Vimeo', url: 'https://www.vimeo.com', category: ['Entertainment'] },
-      { name: 'DeviantArt', url: 'https://www.deviantart.com', category: ['Entertainment'] },
-      { name: 'Code Pen', url: 'https://www.codepen.io', category: ['Technology'] },
+
       { name: 'Khan Academy', url: 'https://www.khanacademy.org', category: ['Education'] },
-      { name: 'EdX', url: 'https://www.edx.org', category: ['Education'] },
       { name: 'Coursera', url: 'https://www.coursera.org', category: ['Education'] },
-      { name: 'BBC Bitesize', url: 'https://www.bbc.co.uk/bitesize', category: ['Education'] },
-      { name: 'BrainPOP', url: 'https://www.brainpop.com', category: ['Education'] },
-      { name: 'Project Gutenberg', url: 'https://www.gutenberg.org', category: ['Books'] },
       { name: 'Wikipedia', url: 'https://www.wikipedia.org', category: ['Information'] },
-      { name: 'WolframAlpha', url: 'https://www.wolframalpha.com', category: ['Information'] },
-      { name: 'BBC News', url: 'https://www.bbc.co.uk/news', category: ['Information', 'News'] },
-      { name: 'Archive.org', url: 'https://archive.org', category: ['Information'] },
-      { name: 'Britannica', url: 'https://www.britannica.com', category: ['Information'] },
+
       { name: 'NASA', url: 'https://www.nasa.gov', category: ['Science'] },
       { name: 'National Geographic', url: 'https://www.nationalgeographic.com', category: ['Science'] },
-      { name: 'Smithsonian Institution', url: 'https://www.si.edu/kids', category: ['Science'] },
-      { name: 'Science Daily', url: 'https://www.sciencedaily.com', category: ['Science'] },
-      { name: 'SoundCloud', url: 'https://www.soundcloud.com', category: ['Music'] },
-      { name: 'Pandora', url: 'https://www.pandora.com', category: ['Music'] },
-      { name: 'Apple Music', url: 'https://www.apple.com/music', category: ['Music'] },
-      { name: 'YouTube Music', url: 'https://music.youtube.com', category: ['Music'] },
-      { name: 'WebMD', url: 'https://www.webmd.com', category: ['Health'] },
-      { name: 'Mayo Clinic', url: 'https://www.mayoclinic.org', category: ['Health'] },
-      { name: 'Healthline', url: 'https://www.healthline.com', category: ['Health'] },
+
       { name: 'Amazon', url: 'https://www.amazon.com', category: ['Shopping'] },
       { name: 'eBay', url: 'https://www.ebay.com', category: ['Shopping'] },
-      { name: 'Walmart', url: 'https://www.walmart.com', category: ['Shopping'] },
-      { name: 'Newegg', url: 'https://www.newegg.com', category: ['Shopping'] },
-      { name: 'Mint', url: 'https://www.mint.com', category: ['Finance'] },
-      { name: 'PayPal', url: 'https://www.paypal.com', category: ['Finance'] },
-      { name: 'Yahoo Finance', url: 'https://finance.yahoo.com', category: ['Finance'] },
-      { name: 'Goodreads', url: 'https://www.goodreads.com', category: ['Books'] },
-      { name: 'Facebook', url: 'https://www.facebook.com', category: ['Social Media'] },
-      { name: 'Twitter', url: 'https://www.twitter.com', category: ['Social Media'] },
-      { name: 'Instagram', url: 'https://www.instagram.com', category: ['Social Media'] },
+
+      { name: 'AutoTrader', url: 'https://www.autotrader.com', category: ['Cars'] },
+      { name: 'CarGurus', url: 'https://www.cargurus.com', category: ['Cars'] },
+
       { name: 'ESPN', url: 'https://www.espn.com', category: ['Sports'] },
-      { name: 'NBC Sports', url: 'https://www.nbcsports.com', category: ['Sports'] },
       { name: 'CNN', url: 'https://www.cnn.com', category: ['News'] },
-      { name: 'The Guardian', url: 'https://www.theguardian.com', category: ['News'] },
-      { name: 'AllRecipes', url: 'https://www.allrecipes.com', category: ['Food'] },
-      { name: 'Food Network', url: 'https://www.foodnetwork.com', category: ['Food'] },
-      { name: 'Weather.com', url: 'https://www.weather.com', category: ['Weather'] },
-      { name: 'AccuWeather', url: 'https://www.accuweather.com', category: ['Weather'] },
-      { name: 'Roblox', url: 'https://www.roblox.com', category: ['Games', 'Entertainment'] },
-      { name: 'AnyDesk', url: 'https://www.anydesk.com', category: ['Technology'] },
-      { name: 'FlightRadar24', url: 'https://www.flightradar24.com', category: ['Navigation', 'Science'] }
+      { name: 'Weather.com', url: 'https://www.weather.com', category: ['Weather'] }
     ];
 
     const categories = Array.from(new Set(links.flatMap(link => link.category)));
@@ -204,26 +165,27 @@
       categories.forEach(category => {
         const button = document.createElement('button');
         button.textContent = category;
-        button.onclick = () => filterLinksByCategory(category);
+        button.onclick = () => {
+          renderLinks(links.filter(link => link.category.includes(category)));
+        };
         categoryButtons.appendChild(button);
       });
     }
 
-    function filterLinksByCategory(category) {
-      const filteredLinks = links.filter(link => link.category.includes(category));
-      renderLinks(filteredLinks);
-    }
-
     searchInput.addEventListener('input', () => {
       const query = searchInput.value.toLowerCase();
-      const filteredLinks = links.filter(link => 
-        link.name.toLowerCase().includes(query) || link.category.some(c => c.toLowerCase().includes(query))
+      renderLinks(
+        links.filter(link =>
+          link.name.toLowerCase().includes(query) ||
+          link.category.some(c => c.toLowerCase().includes(query))
+        )
       );
-      renderLinks(filteredLinks);
     });
 
     renderLinks(links);
     renderCategories();
   </script>
+
 </body>
 </html>
+
